@@ -41,7 +41,7 @@ const anchors = []
 //A function that takes a section as input and it disables the active-class styling from every other 
 //section so it's the only highlighted section, aslo applies that for navbar li highlight so only one li is highlighted
 function helperToggleActiveFromRest(selectedSection) {
-    for (var j = 0; j < sections.length; j++) {
+    for (let j = 0; j < sections.length; j++) {
         console.log("Selected " + selectedSection.id)
         if (selectedSection.id != sections[j].id) {
             console.log("Loop " + sections[j].id)
@@ -75,7 +75,7 @@ function helperToggleActiveFromRest(selectedSection) {
 function buildNavBar(event) {
     const main = document.querySelector("main")
 
-    for (var i = 0; i < main.childNodes.length; i++) {
+    for (let i = 0; i < main.childNodes.length; i++) {
         if (main.childNodes[i].id)
             if (main.childNodes[i].id.startsWith("section")) {
                 sections.push(main.childNodes[i])
@@ -106,7 +106,7 @@ function buildNavBar(event) {
 
 // Add class 'active' to section when near top of viewport
 function addActiveScroll() {
-    for (var i = 0; i < sections.length; i++) {
+    for (let i = 0; i < sections.length; i++) {
         if (sections[i].getBoundingClientRect().top >= -150 && sections[i].getBoundingClientRect().top <= 300) {
             helperToggleActiveFromRest(sections[i])
 
